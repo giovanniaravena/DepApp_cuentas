@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color = "primary">
     <ion-title>
-      Ionic Blank
+      Giovanni Aravena
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let edificio of edificios"
+              (click)="irTorre( edificio )">
+
+      <ion-card>
+        <ion-card-header>
+          Torre {{ edificio.torre }}
+        </ion-card-header>
+        <ion-card-content>
+          {{ edificio.totalpisos }} pisos<br>
+          últ. actualización: 11/03/2018
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item>
+  </ion-list>
+
 </ion-content>

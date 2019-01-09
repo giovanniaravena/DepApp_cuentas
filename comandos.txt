@@ -1,0 +1,81 @@
+﻿*suponiendo que tenemos instalado node, npm *
+  - angular: 	npm install -g @angular/cli@latest
+  - ionic: 	npm install -g ionic@latest
+  - cordova:	sudo npm install -g cordova
+
+*configuracion ionic backend pro
+  - ionic config set -g backend pro
+
+
+
+------------------------------------------------------------
+*En windows abrir PowerShell*
+------------------------------------------------------------
+
+
+        ---Iniciar servidor---
+ionic start depApp blank
+    would you like to integrate your new app with cordova to target native iOS and Android? Yes
+    Install the free Ionic Pro SDK and connect your app? No
+cd .\depApp
+
+ionic serve
+    se abrirá en nuestro navegador predeterminado la app generada en la ruta localhost:8100
+    presionar tecla f12 para abrir las "herramientas del desarrollador"
+ctrl + c
+
+
+        ---Crear páginas---
+ionic generate page login  //es igual a: ionic g page login
+    básicamente crea un html, scss, ts
+    todas las paginas deben ser declaradas en app.module.ts
+
+ionic g page tower
+ionic g page floor
+ionic g page apartment
+ionic g page findapartment
+
+
+        ---Declaración de páginas---
+para trabajarlas como importación:
+    crear archivo index.paginas.ts en pages
+    registrar páginas en index.paginas.ts
+    importarlas en app.module.ts
+
+
+        ---Eliminación de páginas---
+borrar directorio de la página a eliminar
+borrar importación de la página en el archivo app.component.ts
+borrar importación de la página en el archivo app.module.ts
+
+
+        ---Crear tabs---
+ionic g page tabs
+
+
+        ---Angular ngFor, ngIf, ngSwitch---
+https://alligator.io/angular/ngif-directive/
+
+
+        ---OCR Ionic V3---
+Tutorial a seguir: https://devdactic.com/ionic-ocr-using-tesseract/
+
+https://ionicframework.com/docs/native/camera/
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+
+https://www.npmjs.com/package/ngx-progressbar parece que ya no está soportado
+npm install ngx-progressbar --save
+
+https://github.com/naptha/tesseract.js#tesseractjs
+npm install tesseract.js --save
+npm install @types/tesseract.js --save-dev
+
+
+
+------------------------------------------------------------
+*Mini Documentación*
+------------------------------------------------------------
+
+Login: Es un Modal de ionic (ui temporal a la cual no se le puede realizar un Back)
+Tabs: Es una ventana que contiene los tabs que se muestran luego del login que direcciona los diferentes root

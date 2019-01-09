@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Torre {{edificio.torre}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div text-center> {{edificio.totalpisos}} pisos </div>
+
+
+  <ion-list>
+      <div *ngFor="let torre of torres"
+            (click)="irPiso( torre )">
+                    <ion-item *ngIf = " torre.torre == edificio.torre ">
+                            <ion-card> <!-- {{torre.torre}} "==" {{edificio.torre}} --->
+                              <ion-card-header>
+                                Piso {{ torre.piso }}
+                              </ion-card-header>
+                              <ion-card-content>
+                                {{ torre.cantDeptos }} pisos<br>
+                                últ. actualización: 11/03/2018
+                              </ion-card-content>
+                            </ion-card>
+                    </ion-item>
+      </div>
+  </ion-list>
+
+
+
+</ion-content>
